@@ -22,14 +22,16 @@ class CreateAdminUserSeeder extends Seeder
     public function run()
 
     {
+        $mail = env('ADMIN_EMAIL');
+        $password = env('ADMIN_PASSWORD');
 
         $user = User::create([
 
         	'name' => 'Administrador',
 
-        	'email' => 'ti@gastroclinicahospital.com.br',
+        	'email' => $mail,
 
-            'password' => bcrypt('gastroinfo')
+            'password' => bcrypt($password)
 
 
         ]);
